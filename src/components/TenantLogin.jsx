@@ -61,7 +61,7 @@ function TenantLogin({ setTenant }) {
               {/* Add the "Register" link below the form */}
               <div className="text-center mt-3">
                 <p>
-                  Don't have an account? <Link to="/tenant/register">Register here</Link>
+                  Don't have an account? <Link to="/tenant/registration">Register here</Link>
                 </p>
               </div>
             </Card.Body>
