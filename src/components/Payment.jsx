@@ -11,7 +11,7 @@ function Payment({ tenant }) {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://rent-api-25wq.onrender.com/tenant/payment', {
+      const response = await axios.post('https://rent-api-sooty.vercel.app/tenant/payment', {
         tenantID: tenant.id,
         amount
       });

@@ -11,7 +11,7 @@ function Messages({ user }) {
   const handleSendMessage = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://rent-api-25wq.onrender.com/messaging', {
+      await axios.post('https://rent-api-sooty.vercel.app/messaging', {
         sender: user.id,
         receiver: user.role === 'tenant' ? 'landlord' : 'tenant',
         message
@@ -25,7 +25,7 @@ function Messages({ user }) {
 
   const fetchMessages = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/messages', {
+      const response = await axios.get('https://rent-api-sooty.vercel.app/messages', {
         params: { user: user.id }
       });
       setMessages(response.data);

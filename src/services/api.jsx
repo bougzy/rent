@@ -55,7 +55,7 @@
 
 import axios from 'axios';
 
-const API_URL = 'https://rent-api-25wq.onrender.com';
+const API_URL = 'https://rent-api-sooty.vercel.app';
 
 export const landlordLogin = (data) => axios.post(`${API_URL}/landlord/login`, data);
 export const tenantRegister = (data) => axios.post(`${API_URL}/tenant/register`, data);
