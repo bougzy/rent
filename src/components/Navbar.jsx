@@ -1,10 +1,18 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function NavbarComponent({ user, isAdmin, handleLogout }) {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Updated handleLogout function to navigate to home page after logging out
+  const onLogout = () => {
+    handleLogout();
+    navigate('/'); // Redirect to home page
+  };
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg"> {/* Updated bg and variant to dark */}
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
           Apartment Management System
@@ -19,20 +27,20 @@ function NavbarComponent({ user, isAdmin, handleLogout }) {
                     <Nav.Link as={Link} to="/landlord/dashboard">
                       Dashboard
                     </Nav.Link>
-                    <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                    <Nav.Link onClick={onLogout}>Logout</Nav.Link> {/* Updated logout link */}
                   </>
                 ) : (
                   <>
                     <Nav.Link as={Link} to="/tenant/dashboard">
                       Dashboard
                     </Nav.Link>
-                    <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                    <Nav.Link onClick={onLogout}>Logout</Nav.Link> {/* Updated logout link */}
                   </>
                 )}
               </>
             ) : (
               <>
-                {/* Show these links only when user is not logged in */}
+                {/* Show these links only when the user is not logged in */}
                 <Nav.Link as={Link} to="/tenant/login">
                   Tenant Login
                 </Nav.Link>
