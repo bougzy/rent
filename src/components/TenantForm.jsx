@@ -9,7 +9,7 @@ const TenantForm = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/tenants/register', { name, email, password });
+      await axios.post('https://rent-api-25wq.onrender.com/tenants/register', { name, email, password });
       alert('Registration successful!');
       setName('');
       setEmail('');

@@ -11,7 +11,7 @@ function Messages({ user }) {
   const handleSendMessage = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/messaging', {
+      await axios.post('https://rent-api-25wq.onrender.com/messaging', {
         sender: user.id,
         receiver: user.role === 'tenant' ? 'landlord' : 'tenant',
         message
