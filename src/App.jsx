@@ -12,7 +12,7 @@ import LandlordDashboard from './components/LandlordDashboard';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
-
+import "./App.css"
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);

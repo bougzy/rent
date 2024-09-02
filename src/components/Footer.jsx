@@ -7,7 +7,7 @@ function Footer() {
       <Container>
         <Row className="w-100">
           <Col md={6} className="text-center text-md-start mb-3 mb-md-0">
-            <Navbar.Brand href="/">MyApp</Navbar.Brand>
+            <Navbar.Brand href="/">Apartment Management System</Navbar.Brand>
             <Nav className="mt-2">
               <Nav.Link href="/about">About Us</Nav.Link>
               <Nav.Link href="/contact">Contact</Nav.Link>

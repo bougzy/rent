@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Alert, Card, Row, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { useNavigate, Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { tenantRegister } from '../services/api';
 
 function TenantRegistration() {
@@ -83,6 +83,13 @@ function TenantRegistration() {
                   Register
                 </Button>
               </Form>
+              
+              {/* Add the "Login" link below the form */}
+              <div className="text-center mt-3">
+                <p>
+                  Already have an account? <Link to="/tenant/login">Login here</Link>
+                </p>
+              </div>
             </Card.Body>
           </Card>
         </Col>

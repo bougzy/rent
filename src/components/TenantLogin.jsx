@@ -1,60 +1,8 @@
-// // src/components/TenantLogin.js
-// import React, { useState } from 'react';
-// import { Form, Button, Container, Alert } from 'react-bootstrap';
-// import { tenantLogin } from '../services/api';
 
-// function TenantLogin({ setTenant }) {
-//   const [id, setId] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [error, setError] = useState('');
-
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await tenantLogin({ id, password });
-//       setTenant(response.data.tenant);
-//       setError('');
-//       alert('Login successful');
-//     } catch (err) {
-//       setError('Invalid credentials');
-//     }
-//   };
-
-//   return (
-//     <Container>
-//       <h2>Tenant Login</h2>
-//       {error && <Alert variant="danger">{error}</Alert>}
-//       <Form onSubmit={handleLogin}>
-//         <Form.Group>
-//           <Form.Label>Apartment ID</Form.Label>
-//           <Form.Control
-//             type="text"
-//             value={id}
-//             onChange={(e) => setId(e.target.value)}
-//             placeholder="Enter Apartment ID"
-//           />
-//         </Form.Group>
-//         <Form.Group>
-//           <Form.Label>Password</Form.Label>
-//           <Form.Control
-//             type="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             placeholder="Enter password"
-//           />
-//         </Form.Group>
-//         <Button variant="primary" type="submit">
-//           Login
-//         </Button>
-//       </Form>
-//     </Container>
-//   );
-// }
-
-// export default TenantLogin;
 
 import React, { useState } from 'react';
 import { Form, Button, Container, Alert, Row, Col, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { tenantLogin } from '../services/api.jsx'; // Updated import to include .jsx extension
 
 function TenantLogin({ setTenant }) {
@@ -109,6 +57,13 @@ function TenantLogin({ setTenant }) {
                   Login
                 </Button>
               </Form>
+
+              {/* Add the "Register" link below the form */}
+              <div className="text-center mt-3">
+                <p>
+                  Don't have an account? <Link to="/tenant/register">Register here</Link>
+                </p>
+              </div>
             </Card.Body>
           </Card>
         </Col>
@@ -118,4 +73,3 @@ function TenantLogin({ setTenant }) {
 }
 
 export default TenantLogin;
-
